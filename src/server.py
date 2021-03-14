@@ -1,4 +1,11 @@
 from flask import Flask
+from helpers import filters
+import logging
+
+logging.basicConfig(level=logging.INFO)
+
+werkzeug = logging.getLogger('werkzeug')
+werkzeug.addFilter(filters.HealthFilter())
 
 app = Flask(__name__)
 
