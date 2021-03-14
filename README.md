@@ -24,4 +24,9 @@ Coming Soon...
 
 ## Deployment
 
-Coming Soon...
+### Running Locally (Host)
+
+1. Create Virtual Environment `python3 -m venv venv`
+2. Activate Virtual Environment `source venv/bin/activate`
+3. Install Packages `pip3 install -r requirements.txt`
+4. Start Server `python3 src/server.py`
