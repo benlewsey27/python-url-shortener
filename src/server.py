@@ -7,6 +7,8 @@ logging.basicConfig(level=logging.INFO)
 werkzeug = logging.getLogger('werkzeug')
 werkzeug.addFilter(filters.HealthFilter())
 
+logger = logging.getLogger(__name__)
+
 app = Flask(__name__)
 
 @app.route('/health')
