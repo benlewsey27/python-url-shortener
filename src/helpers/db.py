@@ -25,7 +25,7 @@ def setup():
   
   logger.info('Setting up tables...')
   cursor = connection.cursor()
-  sql = f'CREATE TABLE IF NOT EXISTS urls (url_id INT(6) NOT NULL PRIMARY KEY AUTO_INCREMENT, long_url VARCHAR(255) NOT NULL, hash INT(6) NOT NULL);'
+  sql = f'CREATE TABLE IF NOT EXISTS urls (url_id INT(6) NOT NULL PRIMARY KEY AUTO_INCREMENT, long_url VARCHAR(255) NOT NULL, hash VARCHAR(255) NOT NULL);'
   cursor.execute(sql)
 
   logger.info('MYSQL is ready for connections.')

@@ -20,7 +20,23 @@ This application uses a MySQL Database and a Flask RESTful API with three endpoi
 
 ## Instructions
 
-Coming Soon...
+1. Generate a new short URL by running:
+
+```
+curl -X POST -H "Content-type: application/json" -d '{"url":"https://www.google.co.uk"}' localhost:3000/generate
+```
+
+Example Response:
+
+```json
+{
+  "status": 200,
+  "message": "URL generated successfully",
+  "url": "http://localhost:3000/7698461393916768163"
+}
+```
+
+2. Go to the provided URL from Step 1. If successful, you will be redirected to the original URL.
 
 ## Deployment
 
