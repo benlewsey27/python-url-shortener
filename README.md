@@ -18,6 +18,36 @@ This application uses a MySQL Database and a Flask RESTful API with three endpoi
 
 `GET /<hash>` - Redirects the user to the original url.
 
+## Deployment
+
+Before deployment, a `.env` file should be created in the root directory.
+
+The contents of this file should be as below:
+
+```bash
+MYSQL_HOST=mysql
+MYSQL_USER=XXXXX
+MYSQL_PASSWORD=XXXXX
+MYSQL_DATABASE=XXXXX
+```
+
+### Local Deployment (Docker)
+
+Run the application with the instructions below:
+
+```bash
+docker-compose build
+docker-compose up
+
+# The application can be accessed on localhost:3000...
+
+docker-compose down
+```
+
+### Cloud Deployment
+
+Coming Soon!
+
 ## Instructions
 
 1. Generate a new short URL by running:
@@ -37,26 +67,3 @@ Example Response:
 ```
 
 2. Go to the provided URL from Step 1. If successful, you will be redirected to the original URL.
-
-## Deployment
-
-### Running Locally (Host)
-
-1. Create Virtual Environment `python3 -m venv venv`
-2. Activate Virtual Environment `source venv/bin/activate`
-3. Install Packages `pip3 install -r requirements.txt`
-4. Start Server `python3 src/server.py`
-
-### Running Locally (Docker)
-
-```
-docker build -t python-url-shortener:<version> .
-
-docker run -p 3000:3000 \
---name python-url-shortener \
---env MYSQL_HOST=<mysql_hostname> \
---env MYSQL_USER=<mysql_user> \
---env MYSQL_PASSWORD=<mysql_password> \
---env MYSQL_DATABASE=<mysql_database> \
-python-url-shortener:<version>
-```
